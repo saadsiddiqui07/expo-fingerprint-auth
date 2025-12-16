@@ -19,7 +19,7 @@ export default function App() {
           <Button
             title="Set value"
             onPress={async () => {
-              await ExpoFingerprintAuth.setValueAsync('Hello from JS!');
+              await ExpoFingerprintAuth.setValueAsync('Hello from JS and expo fingerprint auth!');
             }}
           />
         </Group>
