@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-fingerprint-auth": ["../src/index"],
+      "expo-fingerprint-auth/*": ["../src/*"]
+    }
+  }
+}
