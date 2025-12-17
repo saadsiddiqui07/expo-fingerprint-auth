@@ -1,35 +1,13 @@
-import { useEvent } from 'expo';
-import ExpoFingerprintAuth, { ExpoFingerprintAuthView } from 'expo-fingerprint-auth';
-import { Button, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { ExpoFingerprintAuthView } from 'expo-fingerprint-auth';
+import { SafeAreaView, ScrollView, Text, View } from 'react-native';
 
 export default function App() {
-  const onChangePayload = useEvent(ExpoFingerprintAuth, 'onChange');
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
         <Text style={styles.header}>Module API Example</Text>
-        <Group name="Constants">
-          <Text>{ExpoFingerprintAuth.PI}</Text>
-        </Group>
-        <Group name="Functions">
-          <Text>{ExpoFingerprintAuth.hello()}</Text>
-        </Group>
-        <Group name="Async functions">
-          <Button
-            title="Set value"
-            onPress={async () => {
-              await ExpoFingerprintAuth.setValueAsync('Hello from JS and expo fingerprint auth!');
-            }}
-          />
-        </Group>
-        <Group name="Events">
-          <Text>{onChangePayload?.value}</Text>
-        </Group>
         <Group name="Views">
           <ExpoFingerprintAuthView
-            url="https://www.example.com"
-            onLoad={({ nativeEvent: { url } }) => console.log(`Loaded: ${url}`)}
             style={styles.view}
           />
         </Group>

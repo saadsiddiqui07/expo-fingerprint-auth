@@ -1,11 +1,6 @@
 import { NativeModule, requireNativeModule } from 'expo';
 
-import { ExpoFingerprintAuthModuleEvents } from './ExpoFingerprintAuth.types';
-
-declare class ExpoFingerprintAuthModule extends NativeModule<ExpoFingerprintAuthModuleEvents> {
-  PI: number;
-  hello(): string;
-  setValueAsync(value: string): Promise<void>;
+declare class ExpoFingerprintAuthModule extends NativeModule {
 }
 
 // This call loads the native module object from the JSI.
